@@ -1,0 +1,60 @@
+---
+layout: default
+---
+{%- assign set = site.data.sets | where: "slug", page.slug | first -%}
+{%- if set == nil -%}
+<div class="wrap prose">
+  {%- comment -%}
+    A stub page whose slug matches no record. Rendered loudly rather than as a
+    blank page, and the string below is what bin/check-build.sh greps for so a
+    typo fails CI instead of shipping an empty set page.
+  {%- endcomment -%}
+  <h1>Missing set data</h1>
+  <p class="build-error">BUILD ERROR: no entry in _data/sets.yml with slug
+  &ldquo;{{ page.slug }}&rdquo;. Re-run <code>bin/extract-problems.py</code>.</p>
+</div>
+{%- else -%}
+<div class="wrap prose">
+  <p class="crumb"><a href="{{ '/problems/' | relative_url }}">← All problem sets</a></p>
+  <h1>{{ set.title }}</h1>
+  <p class="subtitle">{{ set.term }} · {{ set.count }} problems</p>
+
+  {%- if set.epigraph %}
+  <blockquote class="epigraph">
+    <p>{{ set.epigraph }}</p>
+    <cite>{{ set.epigraph_by }}</cite>
+  </blockquote>
+  {%- endif %}
+
+  <p>{{ set.blurb }}</p>
+
+  <p>
+    <a class="btn" href="{{ '/assets/sets/' | append: set.slug | append: '.pdf' | relative_url }}">
+      Download the problem set (PDF)
+    </a>
+  </p>
+
+  {{ content }}
+
+  <h2>What is in it</h2>
+  <p class="note">
+    Problems only — the club works these out together at meetings. Topic and
+    attribution are listed as a starting point.
+  </p>
+  <ol class="problems">
+    {%- for p in set.problems %}
+    <li>
+      <span class="p-title">{{ p.title }}</span>
+      {%- if p.topic or p.difficulty or p.source %}
+      <span class="p-meta">
+        {%- if p.topic %}<span class="tag">{{ p.topic }}</span>{% endif -%}
+        {%- if p.difficulty %}<span class="tag tag-diff">{{ p.difficulty }}</span>{% endif -%}
+        {%- comment -%}Two problems are identified only by their citation, so the extractor promotes the source to the title. Do not print it twice.{%- endcomment -%}
+        {%- if p.source and p.source != p.title %}<span class="src">{{ p.source }}</span>{% endif -%}
+      </span>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</div>
+{%- endif -%}

@@ -1,0 +1,22 @@
+{%- assign club = site.data.club -%}
+<footer class="colophon">
+  <div class="wrap">
+    <p class="disclaimer">
+      Run by students and faculty in the
+      <a href="{{ club.department.url }}">{{ club.department.name }}</a>
+      at The University of Texas at San Antonio. This site is maintained by the
+      club and is not an official publication of the University.
+    </p>
+    <p class="colophon-links">
+      <a href="{{ '/problems/' | relative_url }}">Problem sets</a>
+      <a href="{{ '/join/' | relative_url }}">Mailing list</a>
+      <a href="mailto:{{ club.contact.email }}">Contact</a>
+      <a href="https://github.com/{{ site.repository }}">Source</a>
+    </p>
+    <p class="license">
+      Problem sets licensed
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>;
+      site code MIT. Individual problems remain credited to their sources.
+    </p>
+  </div>
+</footer>

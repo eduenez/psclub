@@ -1,0 +1,11 @@
+{%- comment -%}
+  The meeting line, in one place. Reads _data/club.yml and nothing else, so
+  index, join and embed can never disagree about when the club meets.
+{%- endcomment -%}
+{%- assign m = site.data.club.meeting -%}
+{%- if m.tba -%}
+  Meeting times for {{ site.data.club.term }} are being set now — join the
+  mailing list and you will get them first.
+{%- else -%}
+  {{ m.day }}s, {{ m.time }}{% if m.room != 'TBA' %}, {{ m.building }} {{ m.room }}{% endif %}.
+{%- endif -%}

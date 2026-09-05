@@ -1,0 +1,44 @@
+# Single source of truth for every fact that changes without the site's
+# structure changing. index.md, join.md and embed.md all read from here, and
+# the embed card is framed by the official UTSA clubs page — so editing this
+# file is what updates that page. Nobody needs to be asked.
+
+name: UTSA Mathematics Problem-Solving Club
+short_name: Problem-Solving Club
+abbrev: PSC
+
+term: Fall 2026
+
+# TODO(eduenez): confirm before announcing. These are placeholders.
+meeting:
+  day: Friday
+  time: "3:00–4:00 p.m."
+  room: TBA
+  building: TBA
+  # Shown instead of day/time/room while the schedule is not settled.
+  tba: true
+
+contact:
+  name: Eduardo Dueñez
+  email: eduardo.duenez@utsa.edu
+
+# The mailing list. Swapping providers is a change to these four lines and
+# nothing else — no template touches a hard-coded address.
+#
+# `math-psclub@utsa.edu` has been requested from UTS. If it is provisioned as
+# an Exchange distribution list it will have NO self-subscribe page, no
+# confirmation loop and no unsubscribe footer, so the Google Group stays the
+# subscription front end and the UTSA address becomes the sending address.
+# Set `self_subscribe: false` if the list ever loses a public subscribe page;
+# join.md then falls back to the mailto: path automatically.
+list:
+  address: utsa-psclub@googlegroups.com
+  subscribe_url: https://groups.google.com/g/utsa-psclub
+  provider: google
+  self_subscribe: true
+  requested_address: math-psclub@utsa.edu
+
+department:
+  name: Department of Mathematics
+  url: https://sciences.utsa.edu/mathematics/
+  clubs_page: https://sciences.utsa.edu/mathematics/students/clubs.html

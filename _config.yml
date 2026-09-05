@@ -1,0 +1,38 @@
+title: UTSA Mathematics Problem-Solving Club
+tagline: Weekly problem sessions in the Department of Mathematics
+description: >-
+  The Problem-Solving Club of the Department of Mathematics at The University
+  of Texas at San Antonio: weekly meetings, a growing archive of problem sets,
+  and preparation for the Putnam Competition.
+url: "https://supernumero.us"
+baseurl: "/psclub"
+repository: eduenez/psclub
+
+timezone: America/Chicago
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: null
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page }
+
+exclude:
+  - handoff
+  - Gemfile
+  - Gemfile.lock
+  - bin
+  - README.md
+  - CLAUDE.md
+  - vendor
+  - .jekyll-cache
+  - .bundle

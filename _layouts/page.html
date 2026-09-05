@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="wrap prose">
+  {%- if page.title and page.show_title != false %}
+  <h1>{{ page.title }}</h1>
+  {%- if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+  {%- endif %}
+  {{ content }}
+</div>

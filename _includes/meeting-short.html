@@ -1,0 +1,11 @@
+{%- comment -%}
+  The meeting line for the embed card only. The card is framed cross-origin at
+  a fixed height it cannot negotiate, so this stays terse where the full line
+  in meeting.html can afford a sentence.
+{%- endcomment -%}
+{%- assign m = site.data.club.meeting -%}
+{%- if m.tba -%}
+  {{ site.data.club.term }} times to be announced.
+{%- else -%}
+  {{ m.day }}s, {{ m.time }}{% if m.room != 'TBA' %} · {{ m.building }} {{ m.room }}{% endif %}
+{%- endif -%}

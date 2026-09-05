@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {%- include head.html -%}
+  {%- if page.math != false -%}{%- include katex.html -%}{%- endif -%}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  {%- include masthead.html -%}
+  <main id="main">
+    {{ content }}
+  </main>
+  {%- include footer.html -%}
+</body>
+</html>
