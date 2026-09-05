@@ -108,6 +108,24 @@ registered wordmark and is deliberately not reused; the favicon is a Halmos
 tombstone on burgundy instead. The footer disclaimer stating that this is not an
 official University publication stays.
 
+**Run the checks under CI's Ruby, not yours.** `.github/workflows/build.yml`
+pins Ruby 3.3; a newer local Ruby will pass things CI rejects. This has already
+bitten once: `check-build.sh` reads `_data/sets.yml` with
+`permitted_classes: [Date]`, and Ruby 4 happens to have `Date` loaded while 3.3
+does not, so the check died in CI with `uninitialized constant Date` -- and the
+empty result made all seven PDFs look orphaned, hiding the real cause. Fixed
+three ways: `-rdate` is now explicit, dates in the generated YAML are quoted so
+no `Date` object is produced at all, and an empty set list is treated as a
+broken check rather than a passing one. To reproduce CI locally:
+
+```
+RBENV_VERSION=3.3.12 PATH="$HOME/.rbenv/shims:$PATH" ./bin/check-build.sh
+```
+
+**A check never writes to what it checks.** The staleness check regenerates to
+a temp file and diffs. An earlier version ran `git checkout -- _data/sets.yml`
+to clean up after itself and silently reverted real edits.
+
 **Burgundy `#800020` is not arbitrary.** It is `themecolor` from the problem-set
 LaTeX preambles, where the comment reads "Burgundy for 'Math Club' feel", so the
 site and the PDFs students already hold read as one thing.

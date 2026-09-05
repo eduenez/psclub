@@ -27,7 +27,12 @@ SRC = pathlib.Path(
     )
 ).expanduser()
 
+# Override with --out to write elsewhere. bin/check-build.sh uses that to
+# compare against the committed file without touching the working tree: a
+# check that rewrites the files it is checking is not a check.
 OUT = pathlib.Path(__file__).resolve().parent.parent / "_data" / "sets.yml"
+if "--out" in sys.argv:
+    OUT = pathlib.Path(sys.argv[sys.argv.index("--out") + 1])
 
 # Order here is the order on /problems/. Newest term first.
 SETS = [
@@ -230,7 +235,9 @@ def main() -> int:
         lines.append(f"- slug: {spec['slug']}")
         lines.append(f"  title: {yaml_str(spec['title'])}")
         lines.append(f"  term: {yaml_str(spec['term'])}")
-        lines.append(f"  date: {spec['date']}")
+        # Quoted deliberately: an unquoted YAML date becomes a Date object,
+        # which every strict YAML loader then has to be told to permit.
+        lines.append(f"  date: {yaml_str(spec['date'])}")
         lines.append(f"  source_tex: {yaml_str(spec['source'])}")
         lines.append(f"  count: {len(problems)}")
         lines.append(f"  blurb: {yaml_str(spec['blurb'])}")

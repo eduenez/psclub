@@ -5,7 +5,7 @@
 - slug: geometry
   title: "Geometry"
   term: "Spring 2026"
-  date: 2026-04-21
+  date: "2026-04-21"
   source_tex: "geometry-problems.tex"
   count: 30
   blurb: "Thirty problems in three parts: the basic facts, training exercises, and competition-level geometry. The most developed set in the archive."
@@ -106,7 +106,7 @@
 - slug: assorted-classics
   title: "Assorted Classic Problems"
   term: "Spring 2026"
-  date: 2026-04-15
+  date: "2026-04-15"
   source_tex: "youtube-favorites.tex"
   count: 8
   blurb: "Well-travelled problems that reward a second look."
@@ -142,7 +142,7 @@
 - slug: linear-algebra
   title: "Linear Algebra"
   term: "Spring 2026"
-  date: 2026-03-31
+  date: "2026-03-31"
   source_tex: "LinAlgProblems.tex"
   count: 10
   blurb: "Matrix and linear-algebra problems in the competition style."
@@ -178,7 +178,7 @@
 - slug: five-minute-gems
   title: "Five-Minute Gems"
   term: "Spring 2026"
-  date: 2026-03-24
+  date: "2026-03-24"
   source_tex: "five_minute_gems.tex"
   count: 13
   blurb: "Short problems with a clean idea at the centre. Each is meant to be stated, attacked, and resolved inside one sitting."
@@ -228,7 +228,7 @@
 - slug: games-and-strategy
   title: "Games and Strategy"
   term: "Spring 2026"
-  date: 2026-03-03
+  date: "2026-03-03"
   source_tex: "GamesProblems.tex"
   count: 9
   blurb: "Combinatorial games, invariants, and winning strategies."
@@ -267,7 +267,7 @@
 - slug: spring-2026-intro
   title: "Opening Set"
   term: "Spring 2026"
-  date: 2026-02-11
+  date: "2026-02-11"
   source_tex: "UTSAPSC_spring2026_problems.tex"
   count: 10
   blurb: "The set the club opened Spring 2026 with — the round table, the monk on the mountain, the pigeonholes, the broken stick."
@@ -308,7 +308,7 @@
 - slug: all-time-favorites
   title: "All-Time Favorites"
   term: "Since 2022"
-  date: 2022-09-14
+  date: "2022-09-14"
   source_tex: "UTSA_PSC_favorites.tex"
   count: 4
   blurb: "Problems the club keeps coming back to."
