@@ -28,6 +28,11 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
+          # Gemfile.lock is a Bundler 4 lockfile (it carries sha256= checksums),
+          # which Bundler 2.x cannot parse -- and 2.5.22 is what Ruby 3.3 ships
+          # by default. Ask for the current Bundler explicitly rather than
+          # relying on the runner's default matching the lockfile.
+          bundler: latest
           bundler-cache: true
 
       - id: pages
