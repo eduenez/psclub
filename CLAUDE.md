@@ -126,6 +126,20 @@ RBENV_VERSION=3.3.12 PATH="$HOME/.rbenv/shims:$PATH" ./bin/check-build.sh
 a temp file and diffs. An earlier version ran `git checkout -- _data/sets.yml`
 to clean up after itself and silently reverted real edits.
 
+**The `github-pages` deploy environment's branch policy must list the actual
+default branch.** It is a GitHub repo setting
+(Settings → Environments → github-pages → Deployment branches), not anything
+in this repo's files, so nothing here catches it drifting. When the default
+branch was renamed from `master` to `main`, the environment's branch policy
+was never updated — the `build` job kept succeeding, but `deploy` silently
+failed every push (`Branch "main" is not allowed to deploy to github-pages
+due to environment protection rules`) from 2026-09-05 to 2026-09-09, so the
+live site did not reflect four days of merged commits and nothing in CI
+output made that obvious. Check `gh run list --workflow=build.yml` for a
+green `deploy` job (not just `build`) after any push, especially after a
+default-branch rename. Fixed by replacing the `master` policy with `main`
+via `gh api repos/<owner>/<repo>/environments/github-pages/deployment-branch-policies`.
+
 **Burgundy `#800020` is not arbitrary.** It is `themecolor` from the problem-set
 LaTeX preambles, where the comment reads "Burgundy for 'Math Club' feel", so the
 site and the PDFs students already hold read as one thing.
@@ -136,16 +150,21 @@ with no visible loss. Resizing alone gets nowhere near that.
 
 ## Known rough edges
 
-- The Fall 2026 meeting day, time and room in `_data/club.yml` are
-  placeholders, with `tba: true` so the site says so rather than asserting a
-  wrong time. **Set these before announcing the site.**
-- The mailing list currently points at a Google Group.
-  `math-psclub@utsa.edu` has been requested from UTS. If it arrives as an
-  Exchange distribution list it will have no self-subscribe page and no
-  confirmation loop, in which case the Google Group stays the subscription
-  front end and the UTSA address becomes the sending address. Set
-  `list.self_subscribe: false` and `join.md` switches to the mailto: path on
-  its own.
+- The Fall 2026 meeting is set: Wednesdays, 5:00–7:00 p.m., Main Building
+  (MB) 0.414, starting 2026-09-09. `tba: false` in `_data/club.yml`.
+- **Neither the Google Group nor the requested UTSA address exists yet.**
+  `math-psclub@utsa.edu` has been requested from UTS but not provisioned, and
+  `utsa-psclub@googlegroups.com` in `_data/club.yml` was never actually
+  created — it's aspirational config for whichever provider lands first. The
+  live mailing-list signup is a temporary fallback: `list.form_url` in
+  `_data/club.yml` points at a Google Form
+  (`https://forms.gle/6svkz1joyZeFHeLSA`) a club member has run by hand for
+  years, with no confirmation email, no self-service unsubscribe, and no
+  archive — `join.md` checks `form_url` first and its copy says so honestly.
+  **Once a real list exists, delete `form_url`** and `join.md` falls back to
+  `self_subscribe` (Google Group, self-serve) or the `mailto:` path
+  (`self_subscribe: false`, e.g. an Exchange distribution list with no
+  subscribe page) automatically — no template edit needed either way.
 - `LA_alt.tex` (14 problems, three tiers) is an unpublished alternative to
   `LinAlgProblems.tex` (10). Publish one, not both.
 - `alternate.tex` is excluded permanently: it duplicates the Spring 2026 set
