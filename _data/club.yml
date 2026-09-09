@@ -9,21 +9,28 @@ abbrev: PSC
 
 term: Fall 2026
 
-# TODO(eduenez): confirm before announcing. These are placeholders.
 meeting:
-  day: Friday
-  time: "3:00–4:00 p.m."
-  room: TBA
-  building: TBA
+  day: Wednesday
+  time: "5:00–7:00 p.m."
+  room: "0.414"
+  building: "Main Building (MB)"
   # Shown instead of day/time/room while the schedule is not settled.
-  tba: true
+  tba: false
 
 contact:
   name: Eduardo Dueñez
   email: eduardo.duenez@utsa.edu
 
-# The mailing list. Swapping providers is a change to these four lines and
-# nothing else — no template touches a hard-coded address.
+# The mailing list. Swapping providers is a change to these lines and nothing
+# else — no template touches a hard-coded address.
+#
+# Neither the Google Group below nor the requested UTSA address has actually
+# been provisioned yet, so `form_url` is set as a temporary fallback: a
+# Google Form another club member has run by hand for the past few years.
+# It has no confirmation email, no self-service unsubscribe, and no archive
+# — join.md's copy says so. join.md checks `form_url` first; once the Google
+# Group (or the UTSA address) is real, delete `form_url` and the site goes
+# back to the self-subscribe or mailto path automatically.
 #
 # `math-psclub@utsa.edu` has been requested from UTS. If it is provisioned as
 # an Exchange distribution list it will have NO self-subscribe page, no
@@ -32,6 +39,7 @@ contact:
 # Set `self_subscribe: false` if the list ever loses a public subscribe page;
 # join.md then falls back to the mailto: path automatically.
 list:
+  form_url: https://forms.gle/6svkz1joyZeFHeLSA
   address: utsa-psclub@googlegroups.com
   subscribe_url: https://groups.google.com/g/utsa-psclub
   provider: google

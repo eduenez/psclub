@@ -13,7 +13,17 @@ The mailing list is how the club announces meeting times and rooms, sends out
 each problem set, and passes along Putnam Competition deadlines. It is the only
 thing you need to sign up for.
 
-{%- if list.self_subscribe %}
+{%- if list.form_url %}
+
+<p style="margin-top:1.5rem">
+  <a class="btn" href="{{ list.form_url }}">Sign up via Google Form</a>
+</p>
+
+This is a temporary fallback — the club's own mailing list is not set up yet.
+There is no confirmation email and no self-service unsubscribe; a club member
+adds addresses from the form by hand before the next meeting.
+
+{%- elsif list.self_subscribe %}
 
 <p style="margin-top:1.5rem">
   <a class="btn" href="{{ list.subscribe_url }}">Subscribe to the mailing list</a>
@@ -41,7 +51,11 @@ or anything a club has no business sending you.
 
 ## Leaving the list
 
-{%- if list.self_subscribe %}
+{%- if list.form_url %}
+There is no self-service unsubscribe for this fallback. Email
+<a href="mailto:{{ site.data.club.contact.email }}">{{ site.data.club.contact.email }}</a>
+and you will be removed by hand.
+{%- elsif list.self_subscribe %}
 Every message carries an unsubscribe link in its footer. You can also manage
 your subscription at any time from
 <a href="{{ list.subscribe_url }}">the list page</a>. No one is notified and
