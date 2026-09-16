@@ -35,7 +35,17 @@ if "--out" in sys.argv:
     OUT = pathlib.Path(sys.argv[sys.argv.index("--out") + 1])
 
 # Order here is the order on /problems/. Newest term first.
+# A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="toolkit", source="Fall2026/toolkit.tex",
+         title="The Toolkit", term="Fall 2026", date="2026-09-16",
+         blurb="Five techniques worth owning: geometric series, complex "
+               "numbers, Vieta's formulas, inclusion-exclusion, and counting "
+               "the prime factors of a factorial. Then six harder problems, "
+               "mostly past Putnam, built from the same ideas.",
+         epigraph="If you can't solve a problem, then there is an easier "
+                  "problem you can solve: find it.",
+         epigraph_by="George Pólya"),
     dict(slug="geometry", source="geometry-problems.tex",
          title="Geometry", term="Spring 2026", date="2026-04-21",
          blurb="Thirty problems in three parts: the basic facts, training "
@@ -119,9 +129,14 @@ def strip_tex(s: str) -> str:
     s = re.sub(r"\\[,;!]", " ", s)                     # thin spaces
     s = s.replace("~", " ").replace("\\ ", " ")
     s = re.sub(r"\\(emph|textbf|textit|text|mbox)\{([^}]*)\}", r"\2", s)
-    s = re.sub(r"\\\$", "$", s)
+    # Escaped literals reach the web as the bare character. Without this a
+    # topic written "Number Theory \& Combinatorics" publishes the backslash.
+    s = re.sub(r"\\([&%#_$])", r"\1", s)
     s = re.sub(r"\\[a-zA-Z]+", "", s)                  # any remaining macro
     s = s.replace("{", "").replace("}", "")
+    # TeX dash ligatures. Math spans are already held out, so a minus sign
+    # inside $...$ is untouched.
+    s = s.replace("---", "\u2014").replace("--", "\u2013")
     s = re.sub(r"^\s*\d+\.\s*", "", s)                 # leading "7. " in titles
     s = re.sub(r"\s+", " ", s).strip()
 

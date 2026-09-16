@@ -20,7 +20,9 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/assets/sets"
 
 # slug:source.tex — must match the SETS table in bin/extract-problems.py.
+# A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS=(
+  "toolkit:Fall2026/toolkit.tex"
   "geometry:geometry-problems.tex"
   "assorted-classics:youtube-favorites.tex"
   "linear-algebra:LinAlgProblems.tex"
@@ -40,13 +42,19 @@ trap 'rm -rf "$work"' EXIT
 failed=0
 for entry in "${SETS[@]}"; do
   slug="${entry%%:*}"
-  tex="${entry#*:}"
+  src_tex="${entry#*:}"
+  tex="$(basename "$src_tex")"
   [ -n "$want" ] && [ "$want" != "$slug" ] && continue
-  [ -f "$SRC/$tex" ] || { echo "error: missing $SRC/$tex" >&2; failed=1; continue; }
+  [ -f "$SRC/$src_tex" ] || { echo "error: missing $SRC/$src_tex" >&2; failed=1; continue; }
 
   # Copy the whole source directory so \includegraphics finds its figures.
   rm -rf "$work/build"; mkdir -p "$work/build"
   cp "$SRC"/*.tex "$SRC"/*.png "$SRC"/*.pdf "$SRC"/*.jpg "$SRC"/*.eps "$work/build/" 2>/dev/null || true
+
+  # Those globs only see the top level, so a set filed under a per-term
+  # subdirectory would be missing here. Copy the named source in under its bare
+  # filename; everything below then works against a flat build directory.
+  cp "$SRC/$src_tex" "$work/build/$tex"
 
   # The site publishes problems and hints, not solutions. Only
   # UTSA_PSC_favorites.tex currently contains a worked solution.
