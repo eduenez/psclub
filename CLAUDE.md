@@ -89,6 +89,25 @@ applies filters before compiling — it strips solutions and downsamples banners
 `\begin{solution}`…`\end{solution}` at build time. Only
 `UTSA_PSC_favorites.tex` currently has one.
 
+**The third argument of `challenge` is a citation, not a characterization.**
+Fill it only when a reader could go and look the problem up: a competition with
+year and number (`Putnam 1994 A4`, `IMO 1990, Problem 1`), or an author with a
+publication and year (`E.\,M.\ Langley, \textit{Math.\ Gazette}, 1922`). A
+problem that is merely old and well travelled gets `{}` --- "Classic",
+"Folklore", "Standard", "Interview Question" and "Putnam Prep Folklore" are
+best-effort labels, not sources, and they were removed from every set on
+23 Sep 2026 (85 published source lines down to 26). Park the old wording in a
+trailing comment so nothing is lost: `{} %{Von Neumann's Trick}`. The one
+deliberate exception is `youtube-favorites.tex`, where the channel really is
+where the problem came from and stays as the source.
+
+Two things make this work with no code: the `challenge` box prints **no footer
+at all** when the third argument is empty (every set carries its own copy of the
+definition --- keep the `\if\relax\detokenize{#3}\relax` guard in all of
+them), and `bin/extract-problems.py` emits `source:` only for a non-empty field.
+So blanking one field removes it from the printed sheet and from the site in a
+single move.
+
 **Commented-out problems stay out.** Several sets keep problems in reserve
 behind a leading `%`, either duplicates of another set or held for a future
 meeting. `uncommented()` in the extractor blanks those lines. Nine problems are
