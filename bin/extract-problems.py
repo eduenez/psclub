@@ -37,6 +37,12 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="number-sense", source="Fall2026/number-sense.tex",
+         title="Learn by Doing: Number Sense", term="Fall 2026", date="2026-09-23",
+         blurb="Magnitudes, digits and decimals, worked by hand: how many digits "
+               "a sum of powers up to a googolplex has, the pattern hiding in "
+               "1/9899, and iterated digit sums. Then six competition problems in "
+               "the same vein."),
     dict(slug="toolkit", source="Fall2026/toolkit.tex",
          title="The Toolkit", term="Fall 2026", date="2026-09-16",
          blurb="Five techniques worth owning: geometric series, complex "
@@ -46,6 +52,14 @@ SETS = [
          epigraph="If you can't solve a problem, then there is an easier "
                   "problem you can solve: find it.",
          epigraph_by="George Pólya"),
+    dict(slug="opening", source="Fall2026/opening.tex",
+         title="Opening Set", term="Fall 2026", date="2026-09-09",
+         blurb="The set the club opened Fall 2026 with. Chosen to be inviting "
+               "rather than hard: the McNugget numbers, a fair coin from a biased "
+               "one, the two-envelopes paradox, ants on a stick, and the Josephus "
+               "circle.",
+         epigraph="Don't just read it; fight it!",
+         epigraph_by="Paul Halmos"),
     dict(slug="geometry", source="geometry-problems.tex",
          title="Geometry", term="Spring 2026", date="2026-04-21",
          blurb="Thirty problems in three parts: the basic facts, training "

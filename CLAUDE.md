@@ -110,8 +110,8 @@ single move.
 
 **Commented-out problems stay out.** Several sets keep problems in reserve
 behind a leading `%`, either duplicates of another set or held for a future
-meeting. `uncommented()` in the extractor blanks those lines. Nine problems are
-currently withheld this way; the site shows 84, not 93.
+meeting. `uncommented()` in the extractor blanks those lines. Ten problems are
+currently withheld this way; the site shows 115, not 125.
 
 **`GamesStrategy.png` must never be published.** The artwork has
 AI-generation artifacts rendered into it — about a dozen literal `[cite: 6, 7]`
