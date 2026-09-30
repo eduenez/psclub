@@ -37,6 +37,13 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="counting", source="Fall2026/counting.tex",
+         title="Counting", term="Fall 2026", date="2026-09-30",
+         blurb="Combinatorics from a standing start: pigeonhole, counting the "
+               "complement, counting one thing two ways, and counting up to a "
+               "symmetry. Ends with the Mad Teacups, where the riders of a "
+               "spinning theme-park ride have to be counted up to every rotation "
+               "at once."),
     dict(slug="number-sense", source="Fall2026/number-sense.tex",
          title="Learn by Doing: Number Sense", term="Fall 2026", date="2026-09-23",
          blurb="Magnitudes, digits and decimals, worked by hand: how many digits "

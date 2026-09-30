@@ -22,6 +22,7 @@ OUT="$ROOT/assets/sets"
 # slug:source.tex — must match the SETS table in bin/extract-problems.py.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS=(
+  "counting:Fall2026/counting.tex"
   "number-sense:Fall2026/number-sense.tex"
   "toolkit:Fall2026/toolkit.tex"
   "opening:Fall2026/opening.tex"
@@ -57,6 +58,14 @@ for entry in "${SETS[@]}"; do
   # subdirectory would be missing here. Copy the named source in under its bare
   # filename; everything below then works against a flat build directory.
   cp "$SRC/$src_tex" "$work/build/$tex"
+
+  # Such a set also keeps its figures beside it, invisible to the globs above.
+  # Copy only `fig-*` -- deliberately NOT the whole folder, because the compiled
+  # sets live there too, and a copied-in <slug>.pdf newer than its .tex would let
+  # latexmk decide the document was already built. It would then ship a PDF that
+  # never passed the solution-stripping filter below.
+  srcdir="$(dirname "$SRC/$src_tex")"
+  [ "$srcdir" = "$SRC" ] || cp "$srcdir"/fig-* "$work/build/" 2>/dev/null || true
 
   # The site publishes problems and hints, not solutions. Only
   # UTSA_PSC_favorites.tex currently contains a worked solution.
