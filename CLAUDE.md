@@ -110,8 +110,9 @@ single move.
 
 **Commented-out problems stay out.** Several sets keep problems in reserve
 behind a leading `%`, either duplicates of another set or held for a future
-meeting. `uncommented()` in the extractor blanks those lines. Eleven problems are
-currently withheld this way; the site shows 137, not 148.
+meeting. `uncommented()` in the extractor blanks those lines. Right now 11 problems are withheld this way: the site shows 137 of 148
+authored. Those three numbers are checked against the sources by
+`bin/check-build.sh`, so update them when it tells you to rather than guessing.
 
 **`GamesStrategy.png` must never be published.** The artwork has
 AI-generation artifacts rendered into it — about a dozen literal `[cite: 6, 7]`

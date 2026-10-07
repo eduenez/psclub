@@ -53,7 +53,8 @@ done
 # The problem counts on the site come from the data; if the data is stale
 # relative to the .tex sources the site quietly lies about what is in a set.
 # Regenerate to a temp file and diff -- never over the file being checked.
-if [ -d "${PSC_SRC:-$HOME/repos/teaching/ProblemSolving/ProblemSetsPSC}" ]; then
+SRCDIR="${PSC_SRC:-$HOME/repos/teaching/ProblemSolving/ProblemSetsPSC}"
+if [ -d "$SRCDIR" ]; then
   tmp=$(mktemp)
   if ! python3 bin/extract-problems.py --out "$tmp" >/dev/null 2>&1; then
     report "bin/extract-problems.py does not run"
@@ -61,6 +62,41 @@ if [ -d "${PSC_SRC:-$HOME/repos/teaching/ProblemSolving/ProblemSetsPSC}" ]; then
     report "_data/sets.yml is stale -- run bin/extract-problems.py and commit the result"
   fi
   rm -f "$tmp"
+fi
+
+# The problem counts quoted in CLAUDE.md went stale on three consecutive deploys, so
+# derive them instead: the published total from the generated data, and the withheld
+# total from the sources, where a problem is held back behind a leading `%`. A count
+# maintained by hand is a count that is eventually wrong. Needs the private sources,
+# so like the staleness check above it simply does not run where they are absent.
+if [ -d "$SRCDIR" ]; then
+  meta=$(ruby -rdate -ryaml -e '
+    sets = YAML.load_file("_data/sets.yml", permitted_classes: [Date])
+    puts sets.sum { |s| s["count"].to_i }
+    sets.each { |s| puts s["source_tex"] }' 2>&1) || meta=""
+  published=$(printf '%s\n' "$meta" | head -1)
+  case "$published" in
+    ''|*[!0-9]*)
+      report "could not total the published problems from _data/sets.yml" ;;
+    *)
+      withheld=0
+      for tex in $(printf '%s\n' "$meta" | tail -n +2); do
+        n=$(grep -cE '^[[:space:]]*%[[:space:]]*\\begin\{(challenge|question)\}' "$SRCDIR/$tex" 2>/dev/null) || n=0
+        withheld=$(( withheld + n ))
+      done
+      authored=$(( published + withheld ))
+      # Matched against whitespace-collapsed text, because the sentence wraps in the file.
+      quoted=$(tr '\n' ' ' < CLAUDE.md | tr -s ' ' | grep -oE \
+        'Right now [0-9]+ problems are withheld this way: the site shows [0-9]+ of [0-9]+ authored') || quoted=""
+      if [ -z "$quoted" ]; then
+        report "CLAUDE.md no longer carries the withheld-count sentence this check verifies (sources say $withheld withheld, $published of $authored)"
+      else
+        set -- $(printf '%s\n' "$quoted" | grep -oE '[0-9]+')
+        if [ "$1" != "$withheld" ] || [ "$2" != "$published" ] || [ "$3" != "$authored" ]; then
+          report "CLAUDE.md problem counts are stale: it says $1 withheld, $2 of $3 -- the sources say $withheld withheld, $published of $authored"
+        fi
+      fi ;;
+  esac
 fi
 
 [ "$status" -eq 0 ] && echo "build checks: clean"
