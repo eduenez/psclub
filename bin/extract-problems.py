@@ -37,6 +37,12 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="invariants", source="Fall2026/invariants.tex",
+         title="Invariants", term="Fall 2026", date="2026-10-07",
+         blurb="Find the quantity that never changes, then use it to show something "
+               "is forced or outright impossible: a chocolate bar whose game is "
+               "decided before anyone moves, chameleons that can never agree on a "
+               "colour, a knight that cannot cross the board, and the fifteen puzzle."),
     dict(slug="counting", source="Fall2026/counting.tex",
          title="Counting", term="Fall 2026", date="2026-09-30",
          blurb="Combinatorics from a standing start: pigeonhole, counting the "

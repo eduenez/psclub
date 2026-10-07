@@ -2,6 +2,47 @@
 # Source: /Users/eduenez/repos/teaching/ProblemSolving/ProblemSetsPSC
 # Re-run the script after changing any .tex file.
 
+- slug: invariants
+  title: "Invariants"
+  term: "Fall 2026"
+  date: "2026-10-07"
+  source_tex: "Fall2026/invariants.tex"
+  count: 10
+  blurb: "Find the quantity that never changes, then use it to show something is forced or outright impossible: a chocolate bar whose game is decided before anyone moves, chameleons that can never agree on a colour, a knight that cannot cross the board, and the fifteen puzzle."
+  problems:
+    - title: "Breaking the Bar"
+      topic: "Invariants"
+      difficulty: "Easy"
+    - title: "The Chameleons"
+      topic: "Invariants"
+      difficulty: "Easy"
+    - title: "A Bean in the Can"
+      topic: "Invariants"
+      difficulty: "Easy"
+    - title: "The Blackboard"
+      topic: "Invariants"
+      difficulty: "Medium"
+    - title: "A Knight from Corner to Corner"
+      topic: "Coloring"
+      difficulty: "Medium"
+    - title: "Coins in a Line"
+      topic: "Invariants / Strategy"
+      difficulty: "Medium"
+    - title: "He Loves Me, He Loves Me Not"
+      topic: "Symmetry / Strategy"
+      difficulty: "Medium"
+    - title: "The Fifteen Puzzle"
+      topic: "Parity of Permutations"
+      difficulty: "Hard"
+    - title: "Red Squares, Black Squares"
+      topic: "Coloring / Invariants"
+      difficulty: "Medium"
+      source: "Putnam 2001 B1"
+    - title: "Pegs in a Row"
+      topic: "Invariants / Strategy"
+      difficulty: "Hard"
+      source: "Putnam 2020 B2"
+
 - slug: counting
   title: "Counting"
   term: "Fall 2026"
