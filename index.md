@@ -10,6 +10,16 @@ description: >-
 <h1>Problem-Solving Club</h1>
 <p class="subtitle">Department of Mathematics · The University of Texas at San Antonio</p>
 
+{%- assign putnam = site.data.club.putnam -%}
+{%- if putnam %}
+<a class="putnam-ad" href="{{ '/putnam/' | relative_url }}">
+  <span class="putnam-ad-tag">Register now</span>
+  <span class="putnam-ad-text"><strong>Putnam Competition &mdash; {{ putnam.date }}.</strong>
+  Open to all undergraduates. UTSA&rsquo;s sign-up deadline is {{ putnam.deadline }}.</span>
+  <span class="putnam-ad-go" aria-hidden="true">&rarr;</span>
+</a>
+{%- endif %}
+
 <img class="hero" src="{{ '/assets/img/hero.png' | relative_url }}"
      alt="Engraved illustration: a winding mountain path, a round table of coins, pigeons in pigeonholes, a ladder against a wall, and a broken stick — each a problem the club has worked on."
      width="1200" height="655">
@@ -34,8 +44,8 @@ paper — we provide the chalk.
 graduate standing.
 Undergraduates are eligible to compete in the [Putnam Mathematical
 Competition]({{ '/putnam/' | relative_url }}), an annual North American contest
-held in early December. The 2026 exam is on **Saturday 5 December** and
-registration is open now.
+held in early December.{% if putnam %} The next one is on **{{ putnam.date }}**
+and registration is open now.{% endif %}
 
 ## How a meeting goes
 

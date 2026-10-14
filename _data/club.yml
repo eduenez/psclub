@@ -46,6 +46,13 @@ list:
   self_subscribe: true
   requested_address: math-psclub@utsa.edu
 
+# The Putnam Competition, for as long as it is upcoming. The banner at the top of
+# index.md is conditional on this block, so deleting it after the exam removes the
+# banner too — no template edit, same as everything else here.
+putnam:
+  date: "Saturday 5 December 2026"
+  deadline: "Thursday 3 December 2026"
+
 department:
   name: Department of Mathematics
   url: https://sciences.utsa.edu/mathematics/
