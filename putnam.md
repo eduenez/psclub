@@ -15,9 +15,6 @@ several hundred institutions. UTSA has been participating yearly since 2006.
 The Problem-Solving Club fall sessions emphasize Putnam preparation.
 
 Please consider **registering now**.
-You need to use a web portal to do so.
-Sign-in sheets for PS Club do *not* serve as registration:
-only individual students can do so using the link below:
 
 <p style="margin-top:1.5rem">
   <a class="btn" href="https://putnam.edvistas.com/datamate/testRegister.aspx?id=bff1f52a-7fa9-4bfe-a02b-85bb7ae70943">Register for the Putnam</a>
@@ -26,6 +23,9 @@ only individual students can do so using the link below:
 **UTSA's registration deadline is Thursday 3 December 2026.**
 The national organizers do not set one; this deadline is ours, so that we can
 arrange a room and materials before the Saturday.
+
+**Note:** Sign-up *must* be done individually using the link above.
+Sign-in sheets for PS Club do *not* serve as registration.
 
 ## Putnam Competition date
 
