@@ -2,6 +2,43 @@
 # Source: /Users/eduenez/repos/teaching/ProblemSolving/ProblemSetsPSC
 # Re-run the script after changing any .tex file.
 
+- slug: calculus
+  title: "Calculus: Look Before You Integrate"
+  term: "Fall 2026"
+  date: "2026-10-14"
+  source_tex: "Fall2026/calculus.tex"
+  count: 11
+  blurb: "Reflection, reciprocal changes of variables, and geometry reveal the structure of definite integrals. Five warm-ups lead to competition problems, including an integral of an unknown function from Putnam 2016 A3."
+  problems:
+    - title: "Three Rational Integrals"
+      topic: "Algebra Before Calculus"
+      difficulty: "Easy"
+    - title: "One Reversal, Many Symmetries"
+      topic: "Change of Variables / Symmetry"
+    - title: "Two Fractions"
+      topic: "Reflection"
+      difficulty: "Easy"
+    - title: "A Reciprocal Reversal"
+      topic: "Change of Variables / Symmetry / Warm-up"
+    - title: "A Circle Away from the Origin"
+      topic: "Geometry / Shifted Symmetry / Solids of Revolution"
+    - title: "Is \\(\\pi = 3.14… = 22/7\\)?"
+      topic: "Algebra and Positive Area / Putnam First Position"
+      source: "Putnam 1968 A1 (part (a))"
+    - title: "An Integral over a Half-Line"
+      topic: "Improper Integrals / Change of Variables / Competition Style"
+    - title: "Logarithms and Square Roots"
+      topic: "Reflection / Putnam First Position"
+      source: "Putnam 1987 B1"
+    - title: "A Function Given Indirectly"
+      topic: "Functional Equations / Competition Style"
+    - title: "An Integral of an Unknown Function"
+      topic: "Functional Equations / Integral Symmetry / Putnam A3"
+      source: "Putnam 2016 A3"
+    - title: "A Solid Hidden in an Inequality"
+      topic: "Rotational Symmetry / Putnam First Position"
+      source: "Putnam 2006 A1"
+
 - slug: invariants
   title: "Invariants"
   term: "Fall 2026"

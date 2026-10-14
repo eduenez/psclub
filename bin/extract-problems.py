@@ -37,6 +37,12 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="calculus", source="Fall2026/calculus.tex",
+         title="Calculus: Look Before You Integrate", term="Fall 2026", date="2026-10-14",
+         blurb="Reflection, reciprocal changes of variables, and geometry reveal "
+               "the structure of definite integrals. Five warm-ups lead to "
+               "competition problems, including an integral of an unknown "
+               "function from Putnam 2016 A3."),
     dict(slug="invariants", source="Fall2026/invariants.tex",
          title="Invariants", term="Fall 2026", date="2026-10-07",
          blurb="Find the quantity that never changes, then use it to show something "
@@ -153,6 +159,8 @@ def strip_tex(s: str) -> str:
 
     s = MATH.sub(hold, s)
 
+    # Linked citations contribute their visible label, not the URL.
+    s = re.sub(r"\\href\{[^{}]*\}\{([^{}]*)\}", r"\1", s)
     s = re.sub(r"\\[,;!]", " ", s)                     # thin spaces
     s = s.replace("~", " ").replace("\\ ", " ")
     s = re.sub(r"\\(emph|textbf|textit|text|mbox)\{([^}]*)\}", r"\2", s)
