@@ -29,7 +29,7 @@ Sign-in sheets for PS Club do *not* serve as registration.
 
 ## Putnam Competition date
 
-**Saturday 5 December 2026, 9:00 a.m. to 6:45 p.m.** 
+**Saturday 5 December 2026, 9:00 a.m. to 6:15 p.m.** 
 
 The competition format is changing this year. 
 The exam now runs as **four ninety-minute sessions** with breaks between them.
