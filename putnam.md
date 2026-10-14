@@ -23,6 +23,10 @@ only individual students can do so using the link below:
   <a class="btn" href="https://putnam.edvistas.com/datamate/testRegister.aspx?id=bff1f52a-7fa9-4bfe-a02b-85bb7ae70943">Register for the Putnam</a>
 </p>
 
+**UTSA's registration deadline is Thursday 3 December 2026.**
+The national organizers do not set one; this deadline is ours, so that we can
+arrange a room and materials before the Saturday.
+
 ## Putnam Competition date
 
 **Saturday 5 December 2026, 9:00 a.m. to 6:45 p.m.** 

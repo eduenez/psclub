@@ -33,8 +33,9 @@ paper — we provide the chalk.
 **The club is open to every UTSA student**, regardless of major or undergraduate /
 graduate standing.
 Undergraduates are eligible to compete in the [Putnam Mathematical
-Competition](https://www.maa.org/math-competitions/putnam-competition), an annual
-North American contest held in early December.
+Competition]({{ '/putnam/' | relative_url }}), an annual North American contest
+held in early December. The 2026 exam is on **Saturday 5 December** and
+registration is open now.
 
 ## How a meeting goes
 
