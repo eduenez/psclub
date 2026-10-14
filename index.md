@@ -26,29 +26,22 @@ description: >-
   <a class="btn btn-quiet" href="{{ '/problems/' | relative_url }}">Browse the problems</a>
 </p>
 
-We meet to work on problems together — the kind that are stated in a sentence
-and take an hour and an argument to settle. No lecture, no prerequisites beyond
-curiosity, and no expectation that you solve anything on your own. Bring paper.
+We meet to figure out problems together that require reasoning and ingenuity.
+There is no lecture, and the main prerequisite is intellectual curiosity. Bring
+paper — we provide the chalk.
 
-**The club is open to every UTSA student**, whatever your major or year.
-Undergraduates are also eligible for the [Putnam
-Competition](https://www.maa.org/math-competitions/putnam-competition), which
-the club prepares for each fall.
+**The club is open to every UTSA student**, regardless of major or undergraduate /
+graduate standing.
+Undergraduates are eligible to compete in the [Putnam Mathematical
+Competition](https://www.maa.org/math-competitions/putnam-competition), an annual
+North American contest held in early December.
 
 ## How a meeting goes
 
-Someone puts a problem on the board. We try things — usually the wrong things
-first — and talk about why they fail, which is normally where the idea comes
-from. Problems are chosen so that the first step is available to anybody in the
-room, and the last step is worth showing to somebody else.
-
-Sets are organised in parts of increasing difficulty. The early problems collect
-fundamental results worth proving from scratch even when they look familiar; the
-middle develops techniques — reflections, loci, transformations, coordinates,
-invariants — that reappear across linear algebra, group theory, differential
-geometry, and physics; the last are competition-level, and want creativity and a
-synthesis of everything before them. Work through in order, or jump ahead to
-whatever catches your eye.
+Handouts of suggested problems are distributed.
+Students and faculty mentors try things out in groups; early mistakes are the
+norm; they often pave the way to a solution. Many problems are chosen so that the
+first step is very accessible but the last step teaches a valuable lesson.
 
 ## Recent problem sets
 
