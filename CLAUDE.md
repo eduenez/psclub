@@ -110,7 +110,7 @@ single move.
 
 **Commented-out problems stay out.** Several sets keep problems in reserve
 behind a leading `%`, either duplicates of another set or held for a future
-meeting. `uncommented()` in the extractor blanks those lines. Right now 11 problems are withheld this way: the site shows 148 of 159
+meeting. `uncommented()` in the extractor blanks those lines. Right now 11 problems are withheld this way: the site shows 157 of 168
 authored. Those three numbers are checked against the sources by
 `bin/check-build.sh`, so update them when it tells you to rather than guessing.
 

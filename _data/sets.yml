@@ -2,6 +2,41 @@
 # Source: /Users/eduenez/repos/teaching/ProblemSolving/ProblemSetsPSC
 # Re-run the script after changing any .tex file.
 
+- slug: optimization
+  title: "Optimization: Squares, Constraints, and Symmetry"
+  term: "Fall 2026"
+  date: "2026-10-21"
+  source_tex: "Fall2026/optimization.tex"
+  count: 9
+  blurb: "Completing squares, dot products and symmetry find exact maxima and minima without multivariable calculus. Five warm-ups lead to three Putnam problems, ending with the largest circle that fits inside a four-dimensional cube (Putnam 2008 B3)."
+  problems:
+    - title: "A Quadratic with a Floor"
+      topic: "Completing Squares"
+      difficulty: "Easy"
+    - title: "A Plane and a Sphere"
+      topic: "Dot Products"
+      difficulty: "Easy"
+    - title: "The Range of a Moving Coordinate"
+      topic: "Trigonometry"
+      difficulty: "Easy"
+    - title: "A Quadratic on a Circle"
+      topic: "Quadratic Forms"
+      difficulty: "Easy–Medium"
+    - title: "A Circle with Many Coordinates"
+      topic: "Vectors / Parametric Geometry"
+      difficulty: "Medium"
+    - title: "A Cube in a Cone"
+      topic: "Geometry / Putnam First Position"
+      source: "Putnam 1998 A1"
+    - title: "Packing Two Squares"
+      topic: "Optimization / Putnam First Position"
+      source: "Putnam 1996 A1"
+    - title: "Three Coordinates, One Product"
+      topic: "Optimization / Competition Style"
+    - title: "A Circle in a Four-Dimensional Cube"
+      topic: "Geometric Optimization / Putnam B3"
+      source: "Putnam 2008 B3"
+
 - slug: calculus
   title: "Calculus: Look Before You Integrate"
   term: "Fall 2026"
@@ -198,7 +233,8 @@
       topic: "Number Theory & Combinatorics / Sieving"
       difficulty: "Easy"
     - title: "Too many zeros!!! Plus: one-fourth of a mystery"
-      topic: "Number Theory & Combinatorics / Sieving and Factorials / Easy–Medium"
+      topic: "Number Theory & Combinatorics / Sieving and Factorials"
+      difficulty: "Easy–Medium"
     - title: "Spreading a Fixed Total"
       topic: "Analysis / Series"
       difficulty: "Medium"

@@ -37,6 +37,13 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="optimization", source="Fall2026/optimization.tex",
+         title="Optimization: Squares, Constraints, and Symmetry", term="Fall 2026",
+         date="2026-10-21",
+         blurb="Completing squares, dot products and symmetry find exact maxima and "
+               "minima without multivariable calculus. Five warm-ups lead to three "
+               "Putnam problems, ending with the largest circle that fits inside a "
+               "four-dimensional cube (Putnam 2008 B3)."),
     dict(slug="calculus", source="Fall2026/calculus.tex",
          title="Calculus: Look Before You Integrate", term="Fall 2026", date="2026-10-14",
          blurb="Reflection, reciprocal changes of variables, and geometry reveal "
@@ -244,9 +251,14 @@ def parse(path: pathlib.Path, env: str) -> list[dict]:
                 rec["difficulty"] = m2.group(1).capitalize()
                 topic = topic[: m2.start()].strip()
             else:
+                # A range ("Easy--Medium", an en dash once TeX is stripped) is a
+                # difficulty too; without this it stayed glued to the topic.
                 parts = [p.strip() for p in topic.split("/")]
-                if len(parts) > 1 and parts[-1].lower() in {"easy", "medium", "hard"}:
-                    rec["difficulty"] = parts[-1].capitalize()
+                level = r"(easy|medium|hard)"
+                m3 = re.fullmatch(level + r"(?:\s*(?:\u2013|--|-)\s*" + level + r")?",
+                                  parts[-1], re.I) if len(parts) > 1 else None
+                if m3:
+                    rec["difficulty"] = "\u2013".join(g.capitalize() for g in m3.groups() if g)
                     topic = " / ".join(parts[:-1])
             if topic:
                 rec["topic"] = topic
