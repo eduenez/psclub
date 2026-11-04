@@ -9,6 +9,21 @@ description: >-
   day schedule, eligibility, and preparation sessions.
 ---
 
+{%- assign putnam = site.data.club.putnam -%}
+<dl class="facts">
+  <dt>Date</dt>
+  <dd><strong>{{ putnam.date }}</strong></dd>
+  <dt>Time</dt>
+  <dd><strong>{{ putnam.time }}</strong> (Central)</dd>
+  <dt>Place</dt>
+  <dd>{% if putnam.room != "" and putnam.room %}<strong>{{ putnam.room }}</strong>{% else %}Room to be announced{% endif %}</dd>
+  <dt>Format</dt>
+  <dd>Four ninety-minute sessions with breaks between them.
+      A student who leaves the room during a session may not return to it.</dd>
+  <dt>Register by</dt>
+  <dd><strong>{{ putnam.deadline }}</strong> (UTSA&rsquo;s deadline)</dd>
+</dl>
+
 The William Lowell Putnam Mathematical Competition is a North American undergraduate
 mathematics competition, entered every December by students at
 several hundred institutions. UTSA has been participating yearly since 2006.
@@ -26,20 +41,11 @@ UTSA student.
   <a class="btn" href="https://putnam.edvistas.com/datamate/testRegister.aspx?id=bff1f52a-7fa9-4bfe-a02b-85bb7ae70943">Register for the Putnam</a>
 </p>
 
-**UTSA's registration deadline is Thursday 3 December 2026.**
-The national organizers do not set one; this deadline is ours, so that we can
-arrange a room and materials before the Saturday.
+The registration deadline above is UTSA's: the national organizers do not set
+one, and ours lets us arrange a room and materials before the Saturday.
 
 **Note:** Sign-up *must* be done individually using the link above.
 Sign-in sheets for PS Club do *not* serve as registration.
-
-## Putnam Competition date
-
-**Saturday 5 December 2026, 9:00 a.m. to 6:15 p.m.** 
-
-The competition format is changing this year. 
-The exam now runs as **four ninety-minute sessions** with breaks between them.
-During each session, students may *not* leave the room and return.
 
 ## Registration eligibility
 

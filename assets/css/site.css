@@ -203,3 +203,22 @@ ol.problems li { margin: 0 0 .7rem; max-width: none; }
   .putnam-ad { flex-wrap: wrap; gap: .55rem; }
   .putnam-ad-go { display: none; }
 }
+
+/* The Putnam page's date / time / place box: every logistical fact in one place,
+   read from `putnam:` in _data/club.yml. */
+.facts {
+  display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.2rem;
+  margin: 0 0 2rem; padding: 1.1rem 1.3rem; max-width: var(--measure);
+  background: var(--paper-sunk); border-left: 4px solid var(--burgundy);
+  font-family: var(--serif); font-size: 1.05rem; line-height: 1.45;
+}
+.facts dt {
+  font-family: var(--sans); font-size: .74rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--burgundy);
+  padding-top: .25rem;
+}
+.facts dd { margin: 0; }
+@media (max-width: 34rem) {
+  .facts { grid-template-columns: 1fr; gap: .1rem; }
+  .facts dd { margin-bottom: .6rem; }
+}
