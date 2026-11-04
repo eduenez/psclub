@@ -16,6 +16,12 @@ The Problem-Solving Club fall sessions emphasize Putnam preparation.
 
 Please consider **registering now**.
 
+**When registering, please use your UTSA e-mail address** (`@my.utsa.edu`),
+not a personal one.
+The registration form belongs to the national organizers and accepts any address,
+but your UTSA address is the one we use to reach you, and it identifies you as a
+UTSA student.
+
 <p style="margin-top:1.5rem">
   <a class="btn" href="https://putnam.edvistas.com/datamate/testRegister.aspx?id=bff1f52a-7fa9-4bfe-a02b-85bb7ae70943">Register for the Putnam</a>
 </p>
