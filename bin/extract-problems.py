@@ -45,6 +45,15 @@ SETS = [
                "three later problems, among them which numbers 101...01 are prime "
                "(Putnam 1989 A1) and every positive rational as a quotient of prime "
                "factorials (Putnam 2009 B1)."),
+    dict(slug="geometry-and-coordinates", source="Fall2026/geometry-and-coordinates.tex",
+         title="Geometry: Pictures, Coordinates, and Curves", term="Fall 2026",
+         date="2026-10-28",
+         blurb="Equations as pictures: subtracting circle equations, determinants as"
+               " areas, reflecting a path to straighten it, and areas under a "
+               "hyperbola. Five warm-ups lead to three Putnam problems: the most "
+               "rational points a circle can carry (2008 B1), the shortest perimeter"
+               " in a wedge (1998 B2), and a maximal triangle under a hyperbola "
+               "(2015 A1)."),
     dict(slug="optimization", source="Fall2026/optimization.tex",
          title="Optimization: Squares, Constraints, and Symmetry", term="Fall 2026",
          date="2026-10-21",
