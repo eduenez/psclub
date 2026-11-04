@@ -37,6 +37,14 @@ if "--out" in sys.argv:
 # Order here is the order on /problems/. Newest term first.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS = [
+    dict(slug="remainders-and-operations", source="Fall2026/remainders-and-operations.tex",
+         title="Remainders, Powers, and Operations", term="Fall 2026",
+         date="2026-11-04",
+         blurb="Squares modulo 8, geometric sums that factor, primes built from "
+               "factorials, and an addition in disguise. Five warm-ups lead to "
+               "three later problems, among them which numbers 101...01 are prime "
+               "(Putnam 1989 A1) and every positive rational as a quotient of prime "
+               "factorials (Putnam 2009 B1)."),
     dict(slug="optimization", source="Fall2026/optimization.tex",
          title="Optimization: Squares, Constraints, and Symmetry", term="Fall 2026",
          date="2026-10-21",

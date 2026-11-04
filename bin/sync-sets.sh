@@ -22,6 +22,7 @@ OUT="$ROOT/assets/sets"
 # slug:source.tex — must match the SETS table in bin/extract-problems.py.
 # A source may sit in a per-term subdirectory (Fall2026/toolkit.tex).
 SETS=(
+  "remainders-and-operations:Fall2026/remainders-and-operations.tex"
   "optimization:Fall2026/optimization.tex"
   "calculus:Fall2026/calculus.tex"
   "invariants:Fall2026/invariants.tex"

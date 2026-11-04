@@ -2,6 +2,38 @@
 # Source: /Users/eduenez/repos/teaching/ProblemSolving/ProblemSetsPSC
 # Re-run the script after changing any .tex file.
 
+- slug: remainders-and-operations
+  title: "Remainders, Powers, and Operations"
+  term: "Fall 2026"
+  date: "2026-11-04"
+  source_tex: "Fall2026/remainders-and-operations.tex"
+  count: 8
+  blurb: "Squares modulo 8, geometric sums that factor, primes built from factorials, and an addition in disguise. Five warm-ups lead to three later problems, among them which numbers 101...01 are prime (Putnam 1989 A1) and every positive rational as a quotient of prime factorials (Putnam 2009 B1)."
+  problems:
+    - title: "What Can a Square Leave Behind?"
+      topic: "Congruences"
+      difficulty: "Easy"
+    - title: "Multiplication Rearranges the List"
+      topic: "Modular Arithmetic"
+      difficulty: "Easy–Medium"
+    - title: "Long Sums, Short Products"
+      topic: "Polynomial Identities"
+      difficulty: "Easy"
+    - title: "Primes Made from Factorials"
+      topic: "Multiplicative Generation"
+      difficulty: "Easy–Medium"
+    - title: "An Unfamiliar Addition"
+      topic: "Elementary Algebra"
+      difficulty: "Easy"
+    - title: "Alternating Digits"
+      topic: "Factoring / Putnam First Position"
+      source: "Putnam 1989 A1"
+    - title: "A Fourth Power and a Power of Four"
+      topic: "Factorization / Competition Style"
+    - title: "All Rationals from Prime Factorials"
+      topic: "Number Theory / Putnam First Position"
+      source: "Putnam 2009 B1"
+
 - slug: optimization
   title: "Optimization: Squares, Constraints, and Symmetry"
   term: "Fall 2026"
