@@ -64,7 +64,8 @@ Several UTSA students have taken the Putnam the maximum 4-time limit.
 
 ## How the club prepares
 
-We meet weekly and work problems together, and several of the sets this term
+{% unless site.data.club.meeting.tba %}We meet {% include meeting.html %}
+{% endunless %}We work problems together, and several of the sets this term
 close with past Putnam problems (typically among the easier A1, A2,
 B1 and B2). 
 Past sets are on the [problem sets page]({{ '/problems/' | relative_url }}).

@@ -13,7 +13,10 @@ meeting:
   day: Wednesday
   time: "5:00–7:00 p.m."
   room: "0.414"
-  building: "Main Building (MB)"
+  # The code students find on the campus map; the name is spelled out in full
+  # where there is room (meeting.html) and dropped where there is not (meeting-short.html).
+  building: "MB"
+  building_name: "Main Building"
   # Shown instead of day/time/room while the schedule is not settled.
   tba: false
 

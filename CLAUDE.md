@@ -170,8 +170,8 @@ with no visible loss. Resizing alone gets nowhere near that.
 
 ## Known rough edges
 
-- The Fall 2026 meeting is set: Wednesdays, 5:00–7:00 p.m., Main Building
-  (MB) 0.414, starting 2026-09-09. `tba: false` in `_data/club.yml`.
+- The Fall 2026 meeting is set: Wednesdays, 5:00–7:00 p.m., MB 0.414
+  (Main Building), starting 2026-09-09. `tba: false` in `_data/club.yml`.
 - **Neither the Google Group nor the requested UTSA address exists yet.**
   `math-psclub@utsa.edu` has been requested from UTS but not provisioned, and
   `utsa-psclub@googlegroups.com` in `_data/club.yml` was never actually
